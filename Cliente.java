@@ -1,8 +1,8 @@
 
 public class Cliente {
-	//Atributos
-	private int rut, sistemaSalud, edad;
-	private String nombre, apellido, telefono, afp, direccion, comuna;
+	// Atributos
+
+	private String rut, sistemaSalud, edad, nombre, apellido, telefono, afp, direccion, comuna;
 
 	@Override
 	public String toString() {
@@ -29,12 +29,18 @@ public class Cliente {
 	 * @param direccion
 	 * @param comuna
 	 */
-	public Cliente(int rut, int sistemaSalud, int edad, String nombre, String apellido, String telefono,
+	public Cliente(String rut, String sistemaSalud, String edad, String nombre, String apellido, String telefono,
 			String afp, String direccion, String comuna) {
 		super();
-		
-		this.rut = rut;
-		this.sistemaSalud = sistemaSalud;
+		if (rut.matches("[0-9]{6,8}")) {
+			this.rut = rut;
+		}
+		if (sistemaSalud == "1") {
+			this.sistemaSalud = "Fonasa";
+		}
+		if (sistemaSalud == "2") {
+			this.sistemaSalud = "Isapre";
+		}
 		this.edad = edad;
 		this.nombre = nombre;
 		this.apellido = apellido;
@@ -47,42 +53,42 @@ public class Cliente {
 	/**
 	 * @return the rut
 	 */
-	public int getRut() {
+	public String getRut() {
 		return rut;
 	}
 
 	/**
 	 * @param rut the rut to set
 	 */
-	public void setRut(int rut) {
+	public void setRut(String rut) {
 		this.rut = rut;
 	}
 
 	/**
 	 * @return the sistemaSalud
 	 */
-	public int getSistemaSalud() {
+	public String getSistemaSalud() {
 		return sistemaSalud;
 	}
 
 	/**
 	 * @param sistemaSalud the sistemaSalud to set
 	 */
-	public void setSistemaSalud(int sistemaSalud) {
+	public void setSistemaSalud(String sistemaSalud) {
 		this.sistemaSalud = sistemaSalud;
 	}
 
 	/**
 	 * @return the edad
 	 */
-	public int getEdad() {
+	public String getEdad() {
 		return edad;
 	}
 
 	/**
 	 * @param edad the edad to set
 	 */
-	public void setEdad(int edad) {
+	public void setEdad(String edad) {
 		this.edad = edad;
 	}
 
@@ -175,12 +181,11 @@ public class Cliente {
 
 	}
 
-	public int obtenerSistemaSalud() {
+	public String obtenerSistemaSalud() {
 		return sistemaSalud;
 	}
-	
 
-	public String mostarEdad(){
+	public String mostarEdad() {
 		return ("El usuario tiene " + edad + "anos.");
 	}
 }

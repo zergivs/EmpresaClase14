@@ -3,9 +3,9 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		Cliente cliente1 = new Cliente(13213234, 1, 28, "Juan", "Perez", "56987658765", "Habitat", "Quillota 980",
+		Cliente cliente1 = new Cliente("13213234", "1", "28", "Juan", "Perez", "56987658765", "Habitat", "Quillota 980",
 				"Vina");
-		Cliente cliente2 = new Cliente(12123123, 2, 32, "Maria", "Gonzalez", "56909870987", "modelo", "Quillota 980",
+		Cliente cliente2 = new Cliente("12123123", "2", "32", "Maria", "Gonzalez", "56909870987", "modelo", "Quillota 980",
 				"Vina");
 
 		Usuario usuario1 = new Usuario("Marge Simpson", "17 diciembre 1989", "11222333");
